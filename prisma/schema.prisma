@@ -32,7 +32,8 @@ model Gig {
     description String
     performers  String
     links       String
-    schedule    String
+    startTime   DateTime
+    endTime     DateTime
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
 

@@ -68,9 +68,19 @@ const AddGigModal = ({ dismissModal }: { dismissModal: () => void }) => {
         });
       }}
     >
-      <FieldRow label="Name" name="name" />
-      <FieldRow label="Description" name="description" />
-      <FieldRow label="Performers" name="performers" />
+      <FieldRow label="Gig Title" name="What's the event?" />
+      <FieldRow
+        label="Gig Details"
+        name="description"
+        isTextArea
+        placeholder="Give us some details about this gig"
+      />
+      <FieldRow
+        label="Performers"
+        name="performers"
+        isTextArea
+        placeholder="Who is/are performing for this gig?"
+      />
       <Button
         color="blue"
         pill
@@ -100,23 +110,12 @@ const FieldRow = ({
   return (
     <>
       <div className="mb-2 block">
-        <Label htmlFor="comment" value={label} />
+        <Label value={label} />:
       </div>
       {isTextArea ? (
-        <Textarea
-          id="comment"
-          placeholder={placeholder}
-          required
-          rows={4}
-          name={name}
-        />
+        <Textarea placeholder={placeholder} required rows={4} name={name} />
       ) : (
-        <TextInput
-          type="text"
-          id="disabledInput1"
-          placeholder={placeholder}
-          name={name}
-        />
+        <TextInput id="disabledInput1" placeholder={placeholder} name={name} />
       )}
     </>
   );
