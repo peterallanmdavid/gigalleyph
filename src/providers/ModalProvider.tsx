@@ -34,7 +34,6 @@ export const ModalProvider: React.FC<PropsWithChildren<ModalProviderProps>> = ({
   const [modalOpen, setModalOpen] = useState(false);
 
   const showModal = (modalConfig: ModalConfig) => {
-    console.log("show modal was called");
     setModalConfig(modalConfig);
     setModalOpen(true);
   };
@@ -43,7 +42,7 @@ export const ModalProvider: React.FC<PropsWithChildren<ModalProviderProps>> = ({
   };
 
   const { title, body, renderCustomBody } = modalConfig;
-  console.log("this is the modalopen", modalOpen);
+
   return (
     <ModalProviderContext.Provider
       value={{
